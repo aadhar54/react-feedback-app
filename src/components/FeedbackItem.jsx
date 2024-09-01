@@ -25,4 +25,4 @@ FeedbackItem.propTypes = {
   item: PropTypes.object.isRequired,
 }
 
-export default FeedbackItem
+export default FeedbackItem;

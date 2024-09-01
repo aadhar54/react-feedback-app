@@ -85,4 +85,4 @@ function FeedbackForm() {
   )
 }
 
-export default FeedbackForm
+export default FeedbackForm;

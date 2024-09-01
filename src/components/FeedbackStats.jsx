@@ -17,4 +17,4 @@ function FeedbackStats() {
   )
 }
 
-export default FeedbackStats
+export default FeedbackStats;

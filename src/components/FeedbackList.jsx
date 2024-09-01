@@ -43,4 +43,4 @@ function FeedbackList() {
   // )
 }
 
-export default FeedbackList
+export default FeedbackList;

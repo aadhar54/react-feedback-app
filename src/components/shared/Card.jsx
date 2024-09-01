@@ -25,4 +25,4 @@ Card.propTypes = {
   reverse: PropTypes.bool,
 }
 
-export default Card
+export default Card;

@@ -29,4 +29,4 @@ function RatingSelect({ select, selected }) {
   )
 }
 
-export default RatingSelect
+export default RatingSelect;

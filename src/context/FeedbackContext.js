@@ -95,4 +95,4 @@ export const FeedbackProvider = ({ children }) => {
   )
 }
 
-export default FeedbackContext
+export default FeedbackContext;
