@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from "react"
 
 const FeedbackContext = createContext()
 
@@ -25,10 +25,10 @@ export const FeedbackProvider = ({ children }) => {
 
   // Add feedback
   const addFeedback = async (newFeedback) => {
-    const response = await fetch('/feedback', {
-      method: 'POST',
+    const response = await fetch("/feedback", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newFeedback),
     })
@@ -40,8 +40,8 @@ export const FeedbackProvider = ({ children }) => {
 
   // Delete feedback
   const deleteFeedback = async (id) => {
-    if (window.confirm('Are you sure you want to delete?')) {
-      await fetch(`/feedback/${id}`, { method: 'DELETE' })
+    if (window.confirm("Are you sure you want to delete?")) {
+      await fetch(`/feedback/${id}`, { method: "DELETE" })
 
       setFeedback(feedback.filter((item) => item.id !== id))
     }
@@ -50,9 +50,9 @@ export const FeedbackProvider = ({ children }) => {
   // Update feedback item
   const updateFeedback = async (id, updItem) => {
     const response = await fetch(`/feedback/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(updItem),
     })
