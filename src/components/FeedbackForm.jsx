@@ -1,14 +1,14 @@
-import { useState, useContext, useEffect } from 'react'
-import RatingSelect from './RatingSelect'
-import Card from './shared/Card'
-import Button from './shared/Button'
-import FeedbackContext from '../context/FeedbackContext'
+import { useState, useContext, useEffect } from "react"
+import RatingSelect from "./RatingSelect"
+import Card from "./shared/Card"
+import Button from "./shared/Button"
+import FeedbackContext from "../context/FeedbackContext"
 
 function FeedbackForm() {
-  const [text, setText] = useState('')
+  const [text, setText] = useState("")
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("")
 
   const { addFeedback, feedbackEdit, updateFeedback } =
     useContext(FeedbackContext)
@@ -22,11 +22,11 @@ function FeedbackForm() {
   }, [feedbackEdit])
 
   const handleTextChange = (e) => {
-    if (text === '') {
+    if (text === "") {
       setBtnDisabled(true)
       setMessage(null)
-    } else if (text !== '' && text.trim().length <= 10) {
-      setMessage('Text must be at least 10 characters')
+    } else if (text !== "" && text.trim().length <= 10) {
+      setMessage("Text must be at least 10 characters")
       setBtnDisabled(true)
     } else {
       setMessage(null)
@@ -50,7 +50,7 @@ function FeedbackForm() {
         addFeedback(newFeedback)
       }
 
-      setText('')
+      setText("")
     }
   }
 
@@ -59,19 +59,19 @@ function FeedbackForm() {
       <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
         <RatingSelect select={(rating) => setRating(rating)} />
-        <div className='input-group'>
+        <div className="input-group">
           <input
             onChange={handleTextChange}
-            type='text'
-            placeholder='Write a review'
+            type="text"
+            placeholder="Write a review"
             value={text}
           />
-          <Button type='submit' isDisabled={btnDisabled}>
+          <Button type="submit" isDisabled={btnDisabled}>
             Send
           </Button>
         </div>
 
-        {message && <div className='message'>{message}</div>}
+        {message && <div className="message">{message}</div>}
       </form>
     </Card>
   )
